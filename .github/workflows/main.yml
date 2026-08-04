@@ -1,0 +1,22 @@
+name: Run AFK Bot 24/7
+
+on:
+  push:
+  schedule:
+- cron: '0 */5 * * *'
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install & Start Bot
+        run: |
+          npm install
+          node index.js
