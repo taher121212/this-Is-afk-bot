@@ -3,7 +3,8 @@ name: Run AFK Bot 24/7
 on:
   push:
   schedule:
-- cron: '0 */5 * * *'
+    - cron: '0 */5 * * *'
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
